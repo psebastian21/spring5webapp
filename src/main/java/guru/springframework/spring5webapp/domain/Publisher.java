@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @AllArgsConstructor
@@ -39,6 +40,7 @@ public class Publisher {
 	@Builder.Default
 	@OneToMany
 	@JoinColumn(name = "publisher_id")
+	@ToString.Exclude
 	private Set<Book> books = new HashSet<>();
 
 }
